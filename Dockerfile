@@ -6,5 +6,7 @@ RUN unzip /var/tmp/master.zip -d /var/tmp/
 RUN cd /var/tmp/dnsblast-master && make
 RUN cp /var/tmp/dnsblast-master/dnsblast /usr/bin/
 RUN cd / && rm -rf /var/tmp/* && dnf erase -y gcc make
+
+COPY dns-blast /
     
 CMD ["sh", "dns-blast"]
