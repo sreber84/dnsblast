@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo dnsblast ${DNSHOST:=8.8.8.8} ${DNSREQUEST:=5000} ${DNSPERSEC:=10}
+
+while true; do echo "`date` - `dnsblast ${DNSHOST} ${DNSREQUEST} ${DNSPERSEC}`"; sleep 2; done;
